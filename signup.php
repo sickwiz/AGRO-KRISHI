@@ -122,7 +122,13 @@ function phonenumber(inputtxt)
     <label><p>City</p></label>
 <input class="form-control" type="text" name="city"  />
 </div>
-    <div class="form-group">
+
+<div class="form-group">
+    <label><p>Pincode</p></label>
+<input class="form-control" type="text" name="pincode"/>
+</div>
+
+<div class="form-group">
     <label><p>State</p></label>
 <input class="form-control" type="text" name="state"  />
 </div>
@@ -135,8 +141,13 @@ function phonenumber(inputtxt)
 <input class="form-control"  type="password" name="confirmpassword" autocomplete="off" required  />
 </div>
     <div class="form-group">
-    <label><p>Security Questions</p></label>
-<input class="form-control" type="text" name="name"  />
+    <<select>
+  <option default>Select Your security questions</option>
+  <option value="ques1">what is your first child name?</option>
+  <option value="ques2">what is your field size?</option>
+  <option value="ques3">how many cows you have?</option>
+  <option value="ques4">most favourite near-by village?</option>
+</select> 
 </div>
     <div class="form-group">
     <label><p>Answers</p></label>
