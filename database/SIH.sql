@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 21, 2020 at 12:26 PM
+-- Generation Time: Jan 22, 2020 at 02:51 PM
 -- Server version: 5.7.28-0ubuntu0.18.04.4
 -- PHP Version: 7.2.24-0ubuntu0.18.04.2
 
@@ -30,7 +30,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `CULTIVATOR` (
   `KCC` varchar(20) NOT NULL,
-  `AVAILABLE` int(11) NOT NULL
+  `AVAILABLE` int(11) NOT NULL,
+  `RENT` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -68,7 +69,8 @@ CREATE TABLE `FARMER_LOGIN` (
 
 CREATE TABLE `HARVESTER` (
   `KCC` varchar(20) NOT NULL,
-  `AVAILABLE` int(11) NOT NULL
+  `AVAILABLE` int(11) NOT NULL,
+  `RENT` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -105,7 +107,8 @@ CREATE TABLE `PLANTATION` (
 
 CREATE TABLE `SEED_DRILL` (
   `KCC` varchar(20) NOT NULL,
-  `AVAILABLE` int(11) NOT NULL
+  `AVAILABLE` int(11) NOT NULL,
+  `RENT` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -118,7 +121,8 @@ CREATE TABLE `SHOP` (
   `SID` varchar(20) NOT NULL,
   `TYPE` varchar(20) NOT NULL,
   `LOCATION` varchar(40) NOT NULL,
-  `SHOP_ADMIN` varchar(20) NOT NULL
+  `SHOP_ADMIN` varchar(20) NOT NULL,
+  `PINCODE` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -155,7 +159,8 @@ CREATE TABLE `SLOTS_BOOKED` (
   `SID` varchar(20) NOT NULL,
   `KCC` varchar(20) NOT NULL,
   `DAY` date NOT NULL,
-  `TIME` time NOT NULL
+  `TIME` time NOT NULL,
+  `TOKEN_NO` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -166,7 +171,8 @@ CREATE TABLE `SLOTS_BOOKED` (
 
 CREATE TABLE `SPRAYER` (
   `KCC` varchar(20) NOT NULL,
-  `AVAILABLE` int(11) NOT NULL
+  `AVAILABLE` int(11) NOT NULL,
+  `RENT` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -177,7 +183,8 @@ CREATE TABLE `SPRAYER` (
 
 CREATE TABLE `TRACTOR` (
   `KCC` varchar(20) NOT NULL,
-  `AVAILABLE` int(11) NOT NULL
+  `AVAILABLE` int(11) NOT NULL,
+  `RENT` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
