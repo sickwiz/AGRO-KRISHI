@@ -11,88 +11,7 @@
 
     <link href="css/style.css" rel="stylesheet" />
     
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-<?php
-function hell()
-{
-$email= $_POST["email"];
-	
-	
-		$sql ="SELECT EmailId FROM tblstudents WHERE EmailId=:email";
-$query= $dbh -> prepare($sql);
-$query-> bindParam(':email', $email, PDO::PARAM_STR);
-$query-> execute();
-$results = $query -> fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query -> rowCount() > 0)
-{
-
-
-return false;
-} 
-	
-	
-return true;
-
-}?>
-<script type="text/javascript">
-
-function valid()
-{ var num;
-if(document.signup.password.value!= document.signup.confirmpassword.value)
-{
-alert("Password and Confirm Password Field do not match  !!");
-document.signup.confirmpassword.focus();
-return false;
-}
-return true;
-}
-
-</script>
-<script>
-function checkAvailability() {
-
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(signup.email.value))
-  {
-
-
-   $('#submit').prop('disabled',false);
-  }
-else{
-    alert("You have entered an invalid email address!")
-  $('#submit').prop('disabled',true);
-}
-}</script>
-<script>
-function allLetter()
-      { 
-      
-      if(/^[A-Za-z ]+$/.test(signup.fullanme.value))
-      {
-      
-      $('#submit').prop('disabled',false);
-      }
-      else
-      {
-      alert('Please input alphabet characters only');
-      $('#submit').prop('disabled',true);
-      }
-      }</script>
-<script>
-function phonenumber(inputtxt)
-{
-  
-  if(/^\d{10}$/.test(signup.mobileno.value))
-        {
-       $('#submit').prop('disabled',false);
-        }
-      else
-        {
-        alert("ONLY 10 DIGITS");
-        $('#submit').prop('disabled',true);
-        }
-}
-</script>    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />   
 
 </head>
 <body>
@@ -141,12 +60,14 @@ function phonenumber(inputtxt)
 <input class="form-control"  type="password" name="confirmpassword" autocomplete="off" required  />
 </div>
     <div class="form-group">
-    <<select>
+    <label><p> Security question </p> </label>
+    <br>
+    <select class="form-control">
   <option default>Select Your security questions</option>
-  <option value="ques1">what is your first child name?</option>
-  <option value="ques2">what is your field size?</option>
-  <option value="ques3">how many cows you have?</option>
-  <option value="ques4">most favourite near-by village?</option>
+  <option value="ques1">your favorite crop</option>
+  <option value="ques2">your favorite dinner </option>
+  <option value="ques3">your childhood name</option>
+  <option value="ques4">your best friend</option>
 </select> 
 </div>
     <div class="form-group">
