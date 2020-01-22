@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Online Library Management System | Student Signup</title>
+    <title>AGRO-KRISHI</title>
    
     <link href="css/bootstrap.css" rel="stylesheet" />
     
@@ -91,6 +91,12 @@ function phonenumber(inputtxt)
 <br/><br/>
     <label><p>Username</p></label>
 <input class="form-control" type="text" name="name"  />
+<br>
+<div class="form-group">
+    <label><p>Adhaar no</p></label>
+<input class="form-control" type="text" name="adhaar" placeholder="xxxx-xxxx-xxxx-xxxx"/>
+</div>
+
 <div class="form-group">
     <label><p>Password</p></label>
 <input class="form-control" type="password" name="password"   />
@@ -106,8 +112,13 @@ function phonenumber(inputtxt)
 <input class="form-control" type="int" name="name"  />
 </div>
     <div class="form-group">
-    <label><p>Security Questions</p></label>
-<input class="form-control" type="text" name="name"  />
+    <select>
+  <option default>Select Your security questions</option>
+  <option value="ques1">what is your first child name?</option>
+  <option value="ques2">where was your first shop?</option>
+  <option value="ques3">your favourite tourist destination?</option>
+  <option value="ques4">most favourite near-by village?</option>
+</select> 
 </div>
     <div class="form-group">
     <label><p>Answers</p></label>
