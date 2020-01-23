@@ -24,11 +24,11 @@ include('includes/header.php');?>
 <h3 align="center">LOGIN FORM</h3>
 </div>
 <div class="panel-body">
-<form role="form" method="post">
+<form role="form" method="post" action='admin_login_backend.php'>
 
 <div class="form-group">
-    <label><p>Enter Username</p></label>
-<input class="form-control" type="text" name="username" autocomplete="off" required />
+    <label><p>Enter AadharNo</p></label>
+<input class="form-control" type="text" name="aadhar" autocomplete="off" required />
     </div>
 <div class="form-group">
     <label><p>Password</p></label>
