@@ -19,6 +19,7 @@ if(isset($_POST["submit"]))
                 echo "logged in";
                 $_SESSION['name']=$name['NAME'];
                 $_SESSION['kcc']=$kc;
+                header("location:farmer_home.php");
             }
                 
             else

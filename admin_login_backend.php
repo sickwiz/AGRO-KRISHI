@@ -36,7 +36,7 @@ if(isset($_POST['login']))
                         $_SESSION['admin_aadhar']=$adharno;
                         $_SESSION['admin_name'] = $name['NAME'];
 
-                        echo 'login successful';
+                        header("location:admin_home.php");
                 }
                 else
                 {
