@@ -12,11 +12,11 @@ function valid() {
         alert("name must  contain alphabets only");
         return false;
     }
-    if (!kc.match(/^[0-9][\w]+$/)) {
+    if (!kc.match(/^[0-9]+$/)) {
         alert("kcc must  contain numbers only");
         return false;
     }
-    if (!h.match(/^[0-9][\w]+$/)) {
+    if (!h.match(/^[0-9]+$/)) {
         alert("pincode must  contain numbers only");
         return false;
     }
