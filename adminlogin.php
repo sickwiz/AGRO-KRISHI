@@ -33,7 +33,7 @@ include('includes/header.php');?>
 <div class="form-group">
     <label><p>Password</p></label>
 <input class="form-control" type="password" name="password" autocomplete="off" required />
-</div><p class="help-block"><a href="admin_forgot_password.php">Forgot Password</a></p>
+</div><p class="help-block"><a href="admin_forgot_password1.php">Forgot Password</a></p>
 
  <button type="submit" name="login" class="btn btn-info">LOGIN </button>| <a href="admin_signup_form.php">Not Register Yet</a>
 </form>
