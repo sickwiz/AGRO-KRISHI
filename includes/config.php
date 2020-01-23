@@ -1,3 +1,3 @@
 <?php 
-mysqli_connect('localhost','sickwiz','2409','SIH');
+$con=mysqli_connect('localhost','sickwiz','2409','SIH');
 ?>
