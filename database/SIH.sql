@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 22, 2020 at 02:51 PM
+-- Generation Time: Jan 23, 2020 at 08:55 PM
 -- Server version: 5.7.28-0ubuntu0.18.04.4
 -- PHP Version: 7.2.24-0ubuntu0.18.04.2
 
@@ -86,6 +86,13 @@ CREATE TABLE `MANAGER_LOGIN` (
   `SECURITY_PASS` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `MANAGER_LOGIN`
+--
+
+INSERT INTO `MANAGER_LOGIN` (`SHOP_ADMIN`, `PASSWORD`, `SECURITY_QUES`, `SECURITY_PASS`) VALUES
+('123423455678', '$argon2i$v=19$m=65536,t=4,p=1$MFVHc1lhR1dZTURIRlFYYw$be/Qdpv1vZAWqJVIij5SNksg3tRmAHmTgroFLa+CC5o', 'ques2', '$argon2i$v=19$m=65536,t=4,p=1$enlDcS5qZGREZi9wS3NOVQ$xaFY2IsB/KXrtNwTO2fgxK496VJUoCVad2vYPf1NXoo');
+
 -- --------------------------------------------------------
 
 --
@@ -133,9 +140,15 @@ CREATE TABLE `SHOP` (
 
 CREATE TABLE `SHOP_MANAGER` (
   `NAME` varchar(40) NOT NULL,
-  `SHOP_ADMIN` varchar(20) NOT NULL,
-  `AADHAR` bigint(20) NOT NULL
+  `SHOP_ADMIN` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `SHOP_MANAGER`
+--
+
+INSERT INTO `SHOP_MANAGER` (`NAME`, `SHOP_ADMIN`) VALUES
+('dheeraj12', '123423455678');
 
 -- --------------------------------------------------------
 
