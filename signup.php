@@ -11,8 +11,11 @@
 
     <link href="css/style.css" rel="stylesheet" />
     
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />   
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />  
 
+    <script type="text/javascript" src='farmer_validation.js'></script>    
+
+    
 </head>
 <body>
 
@@ -26,43 +29,43 @@
         <h3 align="center">SIGNUP FORM</h3>
                         </div>
                         <div class="panel-body">
-                            <form name="signup" method="post" onSubmit="return valid();">
+                            <form name="signup" method="post" action="farmer_entry.php" onsubmit ='return valid()'>
 <div class="form-group">
     <br/>
     <br/>
     <label><p>Name</p></label>
-<input class="form-control" type="text" name="name"  />
+<input class="form-control" type="text" name="name"  id="name" required/>
 </div>
     <div class="form-group">
     <label><p>KCC</p></label>
-<input class="form-control" type="int" name="kcc"  />
+<input class="form-control" type="int" name="kcc"  id="kcc" required/>
 </div>
     <div class="form-group">
     <label><p>City</p></label>
-<input class="form-control" type="text" name="city"  />
+<input class="form-control" type="text" name="city"  id="city" required/>
 </div>
 
 <div class="form-group">
     <label><p>Pincode</p></label>
-<input class="form-control" type="text" name="pincode"/>
+<input class="form-control" type="text" name="pincode" id="pin" required/>
 </div>
 
 <div class="form-group">
     <label><p>State</p></label>
-<input class="form-control" type="text" name="state"  />
+<input class="form-control" type="text" name="state"  id="state" required/>
 </div>
 <div class="form-group">
     <label><p>Password</p></label>
-<input class="form-control" type="password" name="password"   />
+<input class="form-control" type="password" name="password"  id="pp" required/>
 </div>
     <div class="form-group">
     <label><p>Confirm Password</p> </label>
-<input class="form-control"  type="password" name="confirmpassword" autocomplete="off" required  />
+<input class="form-control"  type="password" name="confirmpassword" autocomplete="off" id="pp1" required />
 </div>
     <div class="form-group">
     <label><p> Security question </p> </label>
     <br>
-    <select class="form-control">
+    <select name='ques' class="form-control">
   <option default>Select Your security questions</option>
   <option value="ques1">your favorite crop</option>
   <option value="ques2">your favorite dinner </option>
@@ -72,11 +75,10 @@
 </div>
     <div class="form-group">
     <label><p>Answers</p></label>
-<input class="form-control" type="text" name="name"  />
+<input class="form-control" type="text" name="ans"/>
 </div>
                       
-<button type="submit" name="signup" class="btn btn-danger" id="submit">SIGNUP</button>
-
+<input  type="submit" name="submit" value="SIGNUP" class="btn btn-danger"/>
                                     </form>
                             </div>
                         </div>
