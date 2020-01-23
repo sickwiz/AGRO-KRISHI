@@ -27,7 +27,7 @@
 <h3 align="center">SIGNUP FORM</h3>
 </div>
 <div class="panel-body">
-<form name="signup" method="post" onSubmit="return valid();">
+<form name="signup" method="post" action='admin_signup_form_backend.php' onsubmit="return valid();">
 <div class="form-group">
 <br/><br/>
     <label><p>Username</p></label>
@@ -47,14 +47,9 @@
 <input class="form-control"  type="password" name="confirmpassword" autocomplete="off" required  />
 </div>
     
-                                
-    <div class="form-group">
-    <label><p>Registered Shop Id</p></label>
-<input class="form-control" type="int" name="name"  />
-</div>
     <div class="form-group">
     <label><p>Security Question </p> </label>
-    <select class="form-control">
+    <select class="form-control" name='security_question'>
   <option default>Select Your security questions</option>
   <option value="ques1">your best friend</option>
   <option value="ques2">your first job</option>
@@ -64,7 +59,7 @@
 </div>
     <div class="form-group">
     <label><p>Answers</p></label>
-<input class="form-control" type="text" name="name"  />
+<input class="form-control" type="text" name="security_question_answer"  />
 </div>                             
  <br/>
 <button type="submit" name="signup" class="btn btn-danger" id="submit">SIGNUP</button>
