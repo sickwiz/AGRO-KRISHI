@@ -25,7 +25,7 @@
     <h3>LOGIN FORM</h3>
 </div>
 <div class="panel-body">
-<form role="form" method="post">
+<form action="farmer_login_back.php" method="post">
 
 <div class="form-group">
     <br>
@@ -41,7 +41,7 @@
 
  
 
- <button type="submit" name="login" class="btn btn-info">LOGIN </button> | <a href="signup.php">Not Register Yet</a>
+ <button type="submit" name="submit" value="submit" class="btn btn-info">LOGIN </button> | <a href="signup.php">Not Register Yet</a>
 </form>
  </div>
 </div>
