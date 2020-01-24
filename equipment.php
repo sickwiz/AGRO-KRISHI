@@ -46,10 +46,9 @@ else
             <div class="row ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">                        
                        
-                            <li><a href=""><b>PLANTATION</b></a></li>
-                            <li><a href="equipment.php"><b>EQUIPMENTS</b></a></li>
-                            <li><a href=""><b>BOOKINGS</b></a></li>
-                            <li><a href="logout.php"><b>LOGOUT</b></a></li>
+                            <li><a href="add_equipment.php"><b>ADD EQUIPMENT</b></a></li>
+                            <li><a href="rent_list.php"><b>SEE RENTED</b></a></li>
+                            <li><a href=""><b>RENT EQIPMENTS</b></a></li>
                             <!--<li id='wel'><b>WELCOME <?php echo $_SESSION['name'] ?></b></li>-->
                            </ul>
                            <div id='wel'>WELCOME <?php echo $_SESSION['name'] ?></div>

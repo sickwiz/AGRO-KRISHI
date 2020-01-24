@@ -46,15 +46,38 @@ else
             <div class="row ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">                        
                        
-                            <li><a href=""><b>PLANTATION</b></a></li>
-                            <li><a href="equipment.php"><b>EQUIPMENTS</b></a></li>
-                            <li><a href=""><b>BOOKINGS</b></a></li>
-                            <li><a href="logout.php"><b>LOGOUT</b></a></li>
-                            <!--<li id='wel'><b>WELCOME <?php echo $_SESSION['name'] ?></b></li>-->
+                        <li><a href="add_equipment.php"><b>ADD EQUIPMENT</b></a></li>
+                            <li><a href="rent_list.php"><b>SEE RENTED</b></a></li>
+                            <li><a href="rent_equip.php"><b>RENT EQIPMENTS</b></a></li>
                            </ul>
                            <div id='wel'>WELCOME <?php echo $_SESSION['name'] ?></div>
                            </div>
         </div>
     </section>
+
+     <div class="form-area1"> 
+             <div class="row">
+    <div class="col-md-9 col-md-offset-1">
+        <h3 align="center">EQUIPMENT SELECTION</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form method="POST" action="rent_dispequip.php">
+<div class="form-group">
+    <br/>
+    <br/>
+    <div class="form-group">
+    <label><p> SELECT YOUR DESIRED EQUIPMENT</p> </label>
+    <br>
+    <select name='equip' class="form-control">
+  <option default>SELECT EQUIPMENT TO SEE LIST AND RENT</option>
+  <option value="CULTIVATOR">CULTIVATOR</option>
+  <option value="HARVESTER">HARVESTER</option>
+  <option value="SPRAYER">SPRAYER</option>
+  <option value="TRACTOR">TRACTOR</option>
+  <option value="SEED DRILL">SEED DRILL</option>
+</select> 
+<input  type="submit" name="submit" value="SUBMIT" class="btn btn-danger"/>
+</form>
+</div>
 </body>
 </html>
