@@ -51,7 +51,8 @@ function shop()
         <section class="menu-section">
         <div class="container">
             <div class="row ">
-                        <ul id="menu-top" class="nav navbar-nav navbar-right">                        
+                        <ul id="menu-top" class="nav navbar-nav navbar-right"> 
+                        <li><a href="buy_crop.php"><b>BUY CROP</b></a></li>                       
                             <li><a href="logout.php"><b>LOGOUT</b></a></li>
                             <!--<li id='wel'><b>WELCOME <?php echo $_SESSION['admin_name'] ?></b></li>-->
                            </ul>

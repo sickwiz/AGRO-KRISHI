@@ -1,33 +1,14 @@
-<?php
-if(empty($_SESSION))
-{
-    session_start();
-    if(!isset($_SESSION['name']))
-    header("location:index.php");
-}
-else
-{
-    if(!isset($_SESSION['name']))
-    header("location:index.php");
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo $_SESSION['name'] ?></title>
+    <title>BUY CROPS</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/font-awesome.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <style>
-#logo
-{
-    border-radius:50px;
-}
-</style>
 </head>
 <body>
 <div class="navbar navbar-inverse set-radius-zero" >
@@ -41,14 +22,10 @@ else
 
         </div>
     </div>
-        <section class="menu-section">
+    <section class="menu-section">
         <div class="container">
             <div class="row ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">                        
-                       
-                            <li><a href="farmer_plantation_detail.php"><b>PLANTATION</b></a></li>
-                            <li><a href=""><b>EQUIPMENTS</b></a></li>
-                            <li><a href="farm_book.php"><b>BOOKINGS</b></a></li>
                             <li><a href="logout.php"><b>LOGOUT</b></a></li>
                             <!--<li id='wel'><b>WELCOME <?php echo $_SESSION['name'] ?></b></li>-->
                            </ul>
@@ -56,5 +33,9 @@ else
                            </div>
         </div>
     </section>
+    <form action='buy_crop_back.php' method='POST'>
+    <label><p>ENTER TOKEN NO</p></label> <input type='text' name='token'/><br>
+    <input type='submit' value='buy' name='submit'/>
+    </form>
 </body>
 </html>
