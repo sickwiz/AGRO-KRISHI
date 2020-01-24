@@ -45,16 +45,9 @@ else
         <div class="container">
             <div class="row ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">                        
-                       
-<<<<<<< HEAD
-                            <li><a href=""><b>PLANTATION</b></a></li>
-                            <li><a href="equipment.php"><b>EQUIPMENTS</b></a></li>
-                            <li><a href=""><b>BOOKINGS</b></a></li>
-=======
                             <li><a href="farmer_plantation_detail.php"><b>PLANTATION</b></a></li>
-                            <li><a href=""><b>EQUIPMENTS</b></a></li>
+                            <li><a href="equipment.php"><b>EQUIPMENTS</b></a></li>
                             <li><a href="farm_book.php"><b>BOOKINGS</b></a></li>
->>>>>>> ba5b6e8c0008d46c39e10dc56c310bba38f22f15
                             <li><a href="logout.php"><b>LOGOUT</b></a></li>
                             <!--<li id='wel'><b>WELCOME <?php echo $_SESSION['name'] ?></b></li>-->
                            </ul>
