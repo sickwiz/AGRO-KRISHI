@@ -46,7 +46,7 @@ else
             <div class="row ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">                        
                        
-                            <li><a href=""><b>PLANTATION</b></a></li>
+                            <li><a href="farmer_plantation_detail.php"><b>PLANTATION</b></a></li>
                             <li><a href=""><b>EQUIPMENTS</b></a></li>
                             <li><a href="farm_book.php"><b>BOOKINGS</b></a></li>
                             <li><a href="logout.php"><b>LOGOUT</b></a></li>
