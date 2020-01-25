@@ -48,7 +48,9 @@ else
                        
                             <li><a href="add_equipment.php"><b>ADD EQUIPMENT</b></a></li>
                             <li><a href="rent_list.php"><b>SEE RENTED</b></a></li>
-                            <li><a href=""><b>RENT EQIPMENTS</b></a></li>
+                            <li><a href="rent_equip.php"><b>RENT EQIPMENTS</b></a></li>
+                            <li><a href="borrow_equip.php"><b>BORROWED EQUIPMENTS</b></a></li>
+                            <li><a href="logout.php"><b>LOGOUT</b></a></li>
                             <!--<li id='wel'><b>WELCOME <?php echo $_SESSION['name'] ?></b></li>-->
                            </ul>
                            <div id='wel'>WELCOME <?php echo $_SESSION['name'] ?></div>
