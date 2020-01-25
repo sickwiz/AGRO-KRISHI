@@ -1,38 +1,27 @@
 <?php
-include('includes/config.php'); 
+$con= mysqli_connect('localhost','sickwiz','2409','SIH');
+  
     if(empty($_SESSION))
        session_start(); 
       
-   
-    $kc=$_SESSION['kcc'];
-    // echo $kc;
-    $q1="SELECT TO_KCC,EQUIPMENT,NO_EQUIP,ISSUE_DATE FROM RENT WHERE FROM_KCC='$kc'";
+    $kc=$_SESSION['kcc']; 
+    $q1="SELECT * FROM HIRE_PLANTATION WHERE TO_KCC='$kc'";
     $q=mysqli_query($con,$q1);
     if(mysqli_num_rows($q)>0)
     {
-        // echo "hello";
+   
+        
         $name=array();
-        $eqi=array();
-        $k=array();
-        $nolist=array();
-        $dlist=array();
+        $cr=array();
+        $phon=array();
         while($p=mysqli_fetch_assoc($q))
         {
-            array_push($eqi,$p['EQUIPMENT']);
-        array_push($k,$p['TO_KCC']);
-        array_push($nolist,$p['NO_EQUIP']);
-        array_push($dlist,$p['ISSUE_DATE']);
-        $y=$p['TO_KCC'];
-        $q2="SELECT NAME FROM FARMER WHERE KCC='$y'";
-        $qq=mysqli_query($con,$q2);
-        $pp=mysqli_fetch_assoc($qq);
-            array_push($name,$pp['NAME']);
+            array_push($name,$p['NAME']);
+            array_push($cr,$p['CROP']);
+            array_push($phon,$p['PHONE']);
         }
-        
-
-
     }
-$length=count($eqi);  
+$length=count($name);    
 ?>
 
 
@@ -77,20 +66,18 @@ $length=count($eqi);
                             <li><a href="rent_list.php"><b>SEE RENTED</b></a></li>
                             <li><a href="rent_equip.php"><b>RENT EQIPMENTS</b></a></li>
                            </ul>
-                           <div id='wel'>WELCOME <?php echo $_SESSION['name'] ?></div>
+                           <div id='wel'>WELCOME <?php echo $_SESSION['name']; ?></div>
                            </div>
         </div>
     </section>
 
-    <center><font size= "6"><b><span> THESE PEOPLE HAVE RENTED THE EQUIPMENT FROM YOU</span></font size></b></center>
+    <center><font size= "6"><b><span> THE LIST OF PEOPLE WHO ARE INTERESTED IN YOUR CROP </span></font size></b></center>
    <hr>
     <table align=center border=5px>
     <tr id="head">
-    <td> NAME </td>
-    <td> KCC </td>
-    <td> EQUIPMENT </td>
-    <td> NO OF EQUIPMENTS </td>
-    <td> ISSUE DATE </td>
+    <td>TRADER NAME </td>
+    <td>CROP</td>
+    <td>PHONE</td>
     </tr>
     <tr>
     <td> 
@@ -105,35 +92,19 @@ $length=count($eqi);
     <?php 
     for($x=0;$x<$length;$x++)
     {
-        echo $k[$x]."<br><hr>";
+        echo $cr[$x]."<br><hr>";
     }
     ?>
       </td>
       <td> 
-    <?php 
+      <?php 
     for($x=0;$x<$length;$x++)
     {
-        echo $eqi[$x]."<br> <hr>";
+        echo $phon[$x]."<br><hr>";
     }
     ?>
 </td>
-<td> 
-    <?php 
-    for($x=0;$x<$length;$x++)
-    {
-        echo $nolist[$x]."<br> <hr>";
-    }
-    ?>
-</td>
-<td> 
-    <?php 
-    for($x=0;$x<$length;$x++)
-    {
-        echo $dlist[$x]."<br> <hr>";
-    }
-    ?>
-</td>
-</tr>
 </table>
     </body>
     </html>
+ 

@@ -49,6 +49,7 @@ else
                             <li><a href="equipment.php"><b>EQUIPMENTS</b></a></li>
                             <li><a href="farm_book.php"><b>BOOKINGS</b></a></li>
                             <li><a href="logout.php"><b>LOGOUT</b></a></li>
+                            <li><a href="crop_hired_disp.php"><b>CROP HIRING REQUESTS</b></a></li>
                             <!--<li id='wel'><b>WELCOME <?php echo $_SESSION['name'] ?></b></li>-->
                            </ul>
                            <div id='wel'>WELCOME <?php echo $_SESSION['name'] ?></div>
