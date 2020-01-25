@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 23, 2020 at 08:55 PM
--- Server version: 5.7.28-0ubuntu0.18.04.4
--- PHP Version: 7.2.24-0ubuntu0.18.04.2
+-- Generation Time: Jan 25, 2020 at 09:58 AM
+-- Server version: 10.3.14-MariaDB-1
+-- PHP Version: 7.3.4-2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,6 +34,14 @@ CREATE TABLE `CULTIVATOR` (
   `RENT` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `CULTIVATOR`
+--
+
+INSERT INTO `CULTIVATOR` (`KCC`, `AVAILABLE`, `RENT`) VALUES
+('18803005', 55415, 545),
+('18803005', 2, 500);
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +56,13 @@ CREATE TABLE `FARMER` (
   `PINCODE` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `FARMER`
+--
+
+INSERT INTO `FARMER` (`KCC`, `NAME`, `STATE`, `CITY`, `PINCODE`) VALUES
+('18803005', 'aamir', 'jharkhand', 'bokara', 229001);
+
 -- --------------------------------------------------------
 
 --
@@ -61,6 +76,13 @@ CREATE TABLE `FARMER_LOGIN` (
   `SECURITY_PASS` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `FARMER_LOGIN`
+--
+
+INSERT INTO `FARMER_LOGIN` (`KCC`, `PASSWORD`, `SECURITY_QUES`, `SECURITY_PASS`) VALUES
+('18803005', '$argon2i$v=19$m=1024,t=2,p=2$NGYxc1Iya1JBa1RXRU9lcw$m1Z56fnbMxXKwUI45Nh1hosJqr0ZAvrdXk6MP342iIQ', 'ques1', '$argon2i$v=19$m=1024,t=2,p=2$NG9MTDdxWUk2eE0ualFZMQ$lanK6ijnWCVJUks8i43+sFNXid39TsZlmi3pC7Z5JAs');
+
 -- --------------------------------------------------------
 
 --
@@ -72,6 +94,13 @@ CREATE TABLE `HARVESTER` (
   `AVAILABLE` int(11) NOT NULL,
   `RENT` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `HARVESTER`
+--
+
+INSERT INTO `HARVESTER` (`KCC`, `AVAILABLE`, `RENT`) VALUES
+('18803005', 5, 545);
 
 -- --------------------------------------------------------
 
@@ -105,6 +134,18 @@ CREATE TABLE `PLANTATION` (
   `AREA_HECT` float NOT NULL,
   `CROP` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `RENT`
+--
+
+CREATE TABLE `RENT` (
+  `FROM_KCC` int(11) NOT NULL,
+  `TO_KCC` int(11) NOT NULL,
+  `EQUIPMENT` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -188,6 +229,13 @@ CREATE TABLE `SPRAYER` (
   `RENT` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `SPRAYER`
+--
+
+INSERT INTO `SPRAYER` (`KCC`, `AVAILABLE`, `RENT`) VALUES
+('18803005', 500, 69);
+
 -- --------------------------------------------------------
 
 --
@@ -199,6 +247,13 @@ CREATE TABLE `TRACTOR` (
   `AVAILABLE` int(11) NOT NULL,
   `RENT` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `TRACTOR`
+--
+
+INSERT INTO `TRACTOR` (`KCC`, `AVAILABLE`, `RENT`) VALUES
+('18803005', 9, 1000);
 
 --
 -- Indexes for dumped tables
