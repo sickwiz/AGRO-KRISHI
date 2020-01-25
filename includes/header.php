@@ -24,7 +24,7 @@
                             <li><a href="adminlogin.php"><b>ADMIN LOGIN</b></a></li>
                             <li><a href="signup.php"><b>FARMER SIGNUP</b></a></li>
                             <li><a href="index.php"><b>FARMER LOGIN</b></a></li>
-                            <li><a href="trader.php"><b>TRADER</b></a></li>
+                            <li><a href="TRADER_signup.php"><b>TRADER</b></a></li>
                            </ul>
                            </div>
         </div>

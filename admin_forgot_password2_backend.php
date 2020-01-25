@@ -23,8 +23,26 @@ $adharno=$_SESSION['admin_aadhar'];
 
             $q1 = mysqli_query($con,$s1);
 
-            echo 'changed';
+            if($q1)
+            {   
 
+                $s2 = "select NAME from SHOP_MANAGER where SHOP_ADMIN='$adharno'";
+                $q2 = mysqli_query($con,$s2);
+
+                $name=mysqli_fetch_assoc($q2);
+
+                if(empty($_SESSION)) 
+                    session_start();
+                    $_SESSION['admin_aadhar']=$adharno;
+                    $_SESSION['admin_name'] = $name['NAME'];
+
+                    header("location:admin_home.php");
+            }
+            else 
+            {   
+                echo "error occure";
+
+            }
                  
             }
         
