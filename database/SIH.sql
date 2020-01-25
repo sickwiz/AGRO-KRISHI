@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 25, 2020 at 02:00 AM
+-- Generation Time: Jan 25, 2020 at 03:34 AM
 -- Server version: 5.7.28-0ubuntu0.18.04.4
 -- PHP Version: 7.2.24-0ubuntu0.18.04.2
 
@@ -39,9 +39,9 @@ CREATE TABLE `CULTIVATOR` (
 --
 
 INSERT INTO `CULTIVATOR` (`KCC`, `AVAILABLE`, `RENT`) VALUES
-('18803005', 55415, 545),
-('18803005', 2, 500),
-('11', 1, 150);
+('18803005', 55410, 545),
+('18803005', -3, 500),
+('11', 0, 150);
 
 -- --------------------------------------------------------
 
@@ -158,6 +158,14 @@ CREATE TABLE `HIRE_PLANTATION` (
   `TO_KCC` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `HIRE_PLANTATION`
+--
+
+INSERT INTO `HIRE_PLANTATION` (`NAME`, `CROP`, `PHONE`, `TO_KCC`) VALUES
+('ADDA', 'MANGO', 1133131, 1),
+('ASAS', 'SDSD', 13131, 18803005);
+
 -- --------------------------------------------------------
 
 --
@@ -176,7 +184,7 @@ CREATE TABLE `MANAGER_LOGIN` (
 --
 
 INSERT INTO `MANAGER_LOGIN` (`SHOP_ADMIN`, `PASSWORD`, `SECURITY_QUES`, `SECURITY_PASS`) VALUES
-('1', '$argon2i$v=19$m=1024,t=2,p=2$Q3NZZ1Bjc0FRZDY5eFhYLw$JSfzHgUu49XIi0747tPut5f/NKniiYjJGXkqNNhE1YQ', 'ques1', '$argon2i$v=19$m=1024,t=2,p=2$dVUvV2kwS0E1SGVQSmtjeQ$mvWo5uS/AmdvY8gAQw+gblb1++VvCMckmh/iRme4fQg'),
+('1', '$argon2i$v=19$m=65536,t=4,p=1$dkFiQjJRd0tpRXMwQkNxNg$B3dY1xPPB2LaN1OOVT6lXdQ10tlLDMUUu6gRRwyoKOA', 'ques1', '$argon2i$v=19$m=1024,t=2,p=2$dVUvV2kwS0E1SGVQSmtjeQ$mvWo5uS/AmdvY8gAQw+gblb1++VvCMckmh/iRme4fQg'),
 ('10', '$argon2i$v=19$m=1024,t=2,p=2$YWlzekZhQzRNOTlhbEdQQQ$nrGOoMCcbfyn52Y4GANqDbkHXuLg/u+hePL4eDCtLu0', 'ques1', '$argon2i$v=19$m=1024,t=2,p=2$aWsuc0Q2cDhuLkYvNmZtTw$1f32XOOmUGBK6PWiwOcCldpRfqWTwFVmXs/ZNlHkuxI'),
 ('11', '$argon2i$v=19$m=1024,t=2,p=2$SmFuN1BQbXJtRm5Sa2M1TQ$NnH96peFwT675TxrgeibbiPSVeQaqZ5eAd/apE2BmHA', 'ques1', '$argon2i$v=19$m=1024,t=2,p=2$NVliem5HNm9OTmJPNUVGcg$SYtgnJ27VsTXdyvvEW2bMEJKq7rUowGF6UGCJy4ebP0'),
 ('12', '$argon2i$v=19$m=1024,t=2,p=2$cnMuaUtuNGN1aDJnWTdYQg$gzH/V6Z6gRIHGQbtjAXIOygs4ywV+pGSLEiEM14J1mQ', 'ques1', '$argon2i$v=19$m=1024,t=2,p=2$MWdsR0JxeVJ6MmUwSi9ZbA$zo2sa8nQLUKmnrHe1oi23TPhAnNi5T3iYuac3sbMOLQ'),
@@ -224,6 +232,14 @@ CREATE TABLE `RENT` (
   `NO_EQUIP` int(11) NOT NULL,
   `ISSUE_DATE` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `RENT`
+--
+
+INSERT INTO `RENT` (`FROM_KCC`, `TO_KCC`, `EQUIPMENT`, `RENT_PER_DAY`, `NO_EQUIP`, `ISSUE_DATE`) VALUES
+(11, 1, 'CULTIVATOR', 150, 1, '2020-01-25'),
+(18803005, 1, 'CULTIVATOR', 545, 5, '2020-01-25');
 
 -- --------------------------------------------------------
 
@@ -376,6 +392,13 @@ CREATE TABLE `TRADER` (
   `SECUIRTY_PASS` varchar(100) NOT NULL,
   `MOBILE` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `TRADER`
+--
+
+INSERT INTO `TRADER` (`AADHAR`, `NAME`, `PASSWORD`, `SECUIRTY_QUES`, `SECUIRTY_PASS`, `MOBILE`) VALUES
+(16, 'mark', '$argon2i$v=19$m=65536,t=4,p=1$Q1pvV3FXYVVxQ29EQ1pkdg$NGNTn4Xw3Lzhq4ZlEekgPaQ66g2GIotYrOHCbcv/rY8', 'ques1', '$argon2i$v=19$m=65536,t=4,p=1$U0dHelBUYm82emtQbC5SeQ$yO98HydilwQde8WTERj/A0+PQ9sAPZd5wsf8yTC4hZ8', 5454);
 
 --
 -- Indexes for dumped tables

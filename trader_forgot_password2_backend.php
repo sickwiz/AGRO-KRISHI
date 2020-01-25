@@ -14,35 +14,35 @@ if(isset($_POST['change']))
 
 if(empty($_SESSION)) 
 session_start();
-$adharno=$_SESSION['admin_aadhar'];
+$adharno=$_SESSION['trader_aadhar'];
 
     if($password==$confirmpassword)
         {
             $password1 = password_hash($password,PASSWORD_ARGON2I);
-            $s1 = "update MANAGER_LOGIN set PASSWORD='$password1' where SHOP_ADMIN = '$adharno'";
+            $s1 = "update TRADER set PASSWORD='$password1' where AADHAR = '$adharno'";
 
             $q1 = mysqli_query($con,$s1);
 
             if($q1)
-            {   
-
-                $s2 = "select NAME from SHOP_MANAGER where SHOP_ADMIN='$adharno'";
+            {
+                $s2 = "select NAME from TRADER where AADHAR='$adharno'";
                 $q2 = mysqli_query($con,$s2);
 
                 $name=mysqli_fetch_assoc($q2);
 
                 if(empty($_SESSION)) 
                     session_start();
-                    $_SESSION['admin_aadhar']=$adharno;
-                    $_SESSION['admin_name'] = $name['NAME'];
+                    $_SESSION['trader_aadhar']=$adharno;
+                    $_SESSION['trader_name'] = $name['NAME'];
 
-                    header("location:admin_home.php");
+                     header("location:trader_home.php");
+                    echo "loginhogaya";
             }
-            else 
-            {   
+            else
+            {
                 echo "error occure";
-
             }
+
                  
             }
         

@@ -1,3 +1,16 @@
+<?php 
+if(empty($_SESSION))
+{
+    session_start();
+    if(!isset($_SESSION['trader_name']))
+    header("location:index.php");
+}
+else
+{
+    if(!isset($_SESSION['trader_name']))
+    header("location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -18,15 +31,40 @@
     
 </head>
 <body>
+<style>
+#logo
+{
+    border-radius:50px;
+}
+</style>
+<div class="navbar navbar-inverse set-radius-zero" >
+        <div class="container">
+            <div class="navbar-header">
+               <a class="navbar-brand" >
+                   <img id=logo src="img/agroLogo.png" height="100" width="100" />
+                </a>
 
-<?php include('includes/header.php');?>
+            </div>
+
+        </div>
+    </div>
+        <section class="menu-section">
+        <div class="container">
+            <div class="row ">
+                        <ul id="menu-top" class="nav navbar-nav navbar-right">                        
+                            <li><a href="logout.php"><b>LOGOUT</b></a></li>
+                           </ul>
+                           <div id='wel'> WELCOME <?php echo $_SESSION['trader_name'];?> </div>
+                           </div>
+        </div>
+    </section>
          <div class="container">
              <h4 class="header-line"><h3>TRADERS CROP SELECTION</h3></h4>
         </div>
      <div class="form-area1"> 
              <div class="row">
     <div class="col-md-9 col-md-offset-1">
-        <h3 align="center">SIGNUP FORM</h3>
+        <h3 align="center">BUY CROP</h3>
                         </div>
                         <div class="panel-body">
                             <form name="signup" method="post" action="trader_disp_crop.php">
