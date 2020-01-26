@@ -1,38 +1,46 @@
 <?php
-include('includes/config.php'); 
-    if(empty($_SESSION))
-       session_start(); 
-      
-   
-    $kc=$_SESSION['kcc'];
-    // echo $kc;
-    $q1="SELECT TO_KCC,EQUIPMENT,NO_EQUIP,ISSUE_DATE FROM RENT WHERE FROM_KCC='$kc'";
+$con= mysqli_connect('localhost','sickwiz','2409','SIH');
+if(empty($_SESSION))
+session_start(); 
+  if(isset($_POST['submit']))
+  {
+    $crop=$_POST['CRO'];
+    $q1="SELECT * FROM PLANTATION WHERE CROP='$crop'";
     $q=mysqli_query($con,$q1);
     if(mysqli_num_rows($q)>0)
-    {
-        // echo "hello";
-        $name=array();
-        $eqi=array();
-        $k=array();
-        $nolist=array();
-        $dlist=array();
-        while($p=mysqli_fetch_assoc($q))
-        {
-            array_push($eqi,$p['EQUIPMENT']);
-        array_push($k,$p['TO_KCC']);
-        array_push($nolist,$p['NO_EQUIP']);
-        array_push($dlist,$p['ISSUE_DATE']);
-        $y=$p['TO_KCC'];
-        $q2="SELECT NAME FROM FARMER WHERE KCC='$y'";
-        $qq=mysqli_query($con,$q2);
-        $pp=mysqli_fetch_assoc($qq);
-            array_push($name,$pp['NAME']);
-        }
-        
 
 
-    }
-$length=count($eqi);  
+  {
+   
+
+     
+     $kc=array();
+     $st=array();
+     $area=array();
+     $name=array();
+     $state=array();
+     $city=array();
+     $pin=array();
+     while($p=mysqli_fetch_assoc($q))
+     {
+         array_push($area,$p['AREA_HECT']);
+         array_push($st,$p['SOIL_TYPE']);
+         array_push($kc,$p['KCC']);
+         $y=$p['KCC'];
+         $q2="SELECT * FROM FARMER WHERE KCC='$y'";
+         $qq=mysqli_query($con,$q2);
+         while($pp=mysqli_fetch_assoc($qq))
+         {
+             array_push($name,$pp['NAME']);
+             array_push($state,$pp['STATE']);
+             array_push($city,$pp['CITY']);
+             array_push($pin,$pp['PINCODE']);
+         }
+
+     }
+ }
+  }
+$length=count($name);    
 ?>
 
 
@@ -72,27 +80,25 @@ $length=count($eqi);
         <div class="container">
             <div class="row ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">                        
-                       
-                        <li><a href="add_equipment.php"><b>ADD EQUIPMENT</b></a></li>
-                            <li><a href="rent_list.php"><b>SEE RENTED</b></a></li>
-                            <li><a href="rent_equip.php"><b>RENT EQIPMENTS</b></a></li>
-                            <li><a href="farmer_home.php"><b>HOME</b></a></li>
+
                             <li><a href="logout.php"><b>LOGOUT</b></a></li>
                            </ul>
-                           <div id='wel'>WELCOME <?php echo $_SESSION['name'] ?></div>
+                           <div id='wel'>WELCOME <?php echo $_SESSION['trader_name']; ?></div>
                            </div>
         </div>
     </section>
 
-    <center><font size= "6"><b><span> THESE PEOPLE HAVE RENTED THE EQUIPMENT FROM YOU</span></font size></b></center>
+    <center><font size= "6"><b><span> THE LIST OF CROP  </span></font size></b></center>
    <hr>
     <table align=center border=5px>
     <tr id="head">
-    <td> NAME </td>
-    <td> KCC </td>
-    <td> EQUIPMENT </td>
-    <td> NO OF EQUIPMENTS </td>
-    <td> ISSUE DATE </td>
+    <td>FARMER NAME </td>
+    <td>KCC NUMBER</td>
+    <td>STATE</td>
+    <td>CITY</td>
+    <td>PINCODE</td>
+    <td>SOIL TYPE</td>
+    <td>AREA HECT</td>
     </tr>
     <tr>
     <td> 
@@ -107,7 +113,24 @@ $length=count($eqi);
     <?php 
     for($x=0;$x<$length;$x++)
     {
-        echo $k[$x]."<br><hr>";
+        echo $kc[$x]."<br><hr>";
+    }
+    ?>
+      </td>
+      <td> 
+      <?php 
+    for($x=0;$x<$length;$x++)
+    {
+        echo $state[$x]."<br><hr>";
+    }
+    ?>
+</td>
+
+<td> 
+    <?php 
+    for($x=0;$x<$length;$x++)
+    {
+        echo $city[$x]."<br> <hr>";
     }
     ?>
       </td>
@@ -115,27 +138,33 @@ $length=count($eqi);
     <?php 
     for($x=0;$x<$length;$x++)
     {
-        echo $eqi[$x]."<br> <hr>";
+        echo $pin[$x]."<br><hr>";
     }
     ?>
-</td>
-<td> 
-    <?php 
+      </td>
+      <td> 
+      <?php 
     for($x=0;$x<$length;$x++)
     {
-        echo $nolist[$x]."<br> <hr>";
+        echo $st[$x]."<br><hr>";
     }
     ?>
 </td>
-<td> 
-    <?php 
+</td>
+      <td> 
+      <?php 
     for($x=0;$x<$length;$x++)
     {
-        echo $dlist[$x]."<br> <hr>";
+        echo $area[$x]."<br><hr>";
     }
     ?>
 </td>
-</tr>
 </table>
+<h3> REQUEST FARMER 
+<form>
+<label><p>ENTER KCC </p></label> <input type='text' name='kcc'/>
+<input style="color:black"; type='submit'/>
+</form>
     </body>
     </html>
+ 

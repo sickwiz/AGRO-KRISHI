@@ -63,6 +63,8 @@ if(mysqli_num_rows($avail1)>0)
         <div class="container">
             <div class="row ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">                        
+                            <li><a href="farmer_home.php"><b>HOME</b></a></li>
+                            <!-- <li><a href="logout.php"><b>LOGOUT</b></a></li> -->
                             <li><a href="logout.php"><b>LOGOUT</b></a></li>
                             <!--<li id='wel'><b>WELCOME <?php echo $_SESSION['name'] ?></b></li>-->
                            </ul>

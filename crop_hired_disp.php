@@ -61,10 +61,8 @@ $length=count($name);
         <div class="container">
             <div class="row ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">                        
-                       
-                        <li><a href="add_equipment.php"><b>ADD EQUIPMENT</b></a></li>
-                            <li><a href="rent_list.php"><b>SEE RENTED</b></a></li>
-                            <li><a href="rent_equip.php"><b>RENT EQIPMENTS</b></a></li>
+                            <li><a href="farmer_home.php"><b>HOME</b></a></li>
+                            <li><a href="logout.php"><b>LOGOUT</b></a></li>
                            </ul>
                            <div id='wel'>WELCOME <?php echo $_SESSION['name']; ?></div>
                            </div>
