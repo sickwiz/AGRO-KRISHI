@@ -33,7 +33,7 @@
 }
 
 .archie {
-    background-color: white;
+    background-color: green;
 }
 
 .form-area {
@@ -124,7 +124,7 @@ h3 {
 }
 
 .navbar-inverse {
-    background-color: #FFF;
+    background-color: green;
     border-color: rgba(155, 153, 153, 0.23);
 }
 

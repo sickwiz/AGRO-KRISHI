@@ -32,7 +32,7 @@ if(isset($_POST['submit']))
         $in="INSERT INTO SLOTS_BOOKED VALUES ('$sid','$k','$d','$t')";
         $in1=mysqli_query($con,$in);
         if($in1)
-        {
+        {   
             $u="UPDATE SLOTS_AVAILABLE SET NO_SLOTS=NO_SLOTS-1 WHERE SID='$sid' AND DATE='$d'";
             $u1=mysqli_query($con,$u);
             mysqli_query($con,"DELETE FROM SLOTS_AVAILABLE WHERE NO_SLOTS=0");
